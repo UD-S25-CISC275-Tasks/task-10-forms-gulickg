@@ -39,12 +39,12 @@ export function TwoDice(): React.JSX.Element {
         <div>
             <div>
                 <span data-testid="left-die">
-                    <button onClick={rollLeft}>Roll Left</button>
+                    <Button onClick={rollLeft}>Roll Left</Button>
                 </span>
             </div>
             <div>
                 <span data-testid="right-die">
-                    <button onClick={rollRight}>Roll Right</button>
+                    <Button onClick={rollRight}>Roll Right</Button>
                 </span>
             </div>
             {message && <div>{message}</div>}
