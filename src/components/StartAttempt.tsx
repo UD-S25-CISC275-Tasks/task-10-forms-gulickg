@@ -4,49 +4,36 @@ import { Button } from "react-bootstrap";
 export function StartAttempt(): React.JSX.Element {
     const [attempts, setAttempts] = useState<number>(4);
     const [progress, setProgress] = useState<boolean>(false);
-    const [disabled, setDisabled] = useState<boolean>(true);
+    //const [disabled, setDisabled] = useState<boolean>(true);
     function startQuiz(): void {
         if (attempts > 0) {
             setProgress(true);
-            () => setAttempts(attempts - 1);
+            setAttempts(attempts - 1);
         }
     }
     function stopQuiz(): void {
         setProgress(false);
     }
     function mulligan(): void {
-        () => setAttempts(attempts + 1);
+        setAttempts(attempts + 1);
     }
     return (
         <div>
-            {progress && attempts > 0
-                ? <Button onClick={startQuiz}>Start Quiz</Button> && (
-                      <Button onClick={stopQuiz} disabled={disabled}>
-                          Stop Quiz
-                      </Button>
-                  ) && (
-                      <Button onClick={mulligan} disabled={disabled}>
-                          Mulligan
-                      </Button>
-                  )
-                : !progress
-                ? <Button onClick={startQuiz}>Start Quiz</Button> && (
-                      <Button onClick={stopQuiz} disabled={disabled}>
-                          Stop Quiz
-                      </Button>
-                  ) && <Button onClick={mulligan}>Mulligan</Button>
-                : attempts == 0
-                ? (
-                      <Button onClick={startQuiz} disabled={disabled}>
-                          Start Quiz
-                      </Button>
-                  ) && <Button onClick={stopQuiz}>Stop Quiz</Button> && (
-                      <Button onClick={mulligan}>Mulligan</Button>
-                  )
-                : <Button onClick={startQuiz}>Start Quiz</Button> && (
-                      <Button onClick={stopQuiz}>stopQuiz</Button>
-                  ) && <Button onClick={mulligan}>Mulligan</Button>}
-            <h3>Number of Attempts: {attempts}</h3>
+            <p>Number of Attempts: {attempts}</p>
+            <div>
+                <Button
+                    onClick={startQuiz}
+                    disabled={progress || attempts == 0}
+                >
+                    Start Quiz
+                </Button>
+                <Button onClick={stopQuiz} disabled={!progress}>
+                    Stop Quiz
+                </Button>
+                <Button onClick={mulligan} disabled={progress}>
+                    Mulligan
+                </Button>
+            </div>
         </div>
     );
 }

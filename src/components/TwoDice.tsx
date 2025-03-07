@@ -14,24 +14,26 @@ export function d6(): number {
 export function TwoDice(): React.JSX.Element {
     const [right, setRight] = useState<number>(d6());
     const [left, setLeft] = useState<number>(d6());
-    const [visible, setVisible] = useState<boolean>(false);
+    //const [visible, setVisible] = useState<boolean>(false);
     let message = "";
-    while (right == left) {
+    while (right === left) {
         setRight(d6());
         setLeft(d6());
     }
-    const rollLeft = () => {
+    function rollLeft() {
         setLeft(d6);
-    };
-    const rollRight = () => {
+    }
+    function rollRight() {
         setRight(d6);
-    };
-    if (right == left && right == 1) {
-        message = "Lose";
-        setVisible(true);
-    } else {
-        message = "Win";
-        setVisible(true);
+    }
+    if (right == left) {
+        if (left == 1) {
+            message = "Lose";
+            //setVisible(true);
+        } else {
+            message = "Win";
+            //setVisible(true);
+        }
     }
     return (
         <div>
@@ -41,11 +43,11 @@ export function TwoDice(): React.JSX.Element {
                 </span>
             </div>
             <div>
-                <span data-testid="right-die-die">
+                <span data-testid="right-die">
                     <button onClick={rollRight}>Roll Right</button>
                 </span>
             </div>
-            {visible && <div>{message}</div>}
+            {message && <div>{message}</div>}
         </div>
     );
 }
