@@ -11,8 +11,8 @@ function ChangeColor({
 }): React.JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     const handleClick = () => {
-        setColorIndex((1 + colorIndex) % COLORS.length),
-            colorChange((1 + colorIndex) % COLORS.length);
+        const newIndex = (1 + colorIndex) % COLORS.length;
+        setColorIndex(newIndex), colorChange(newIndex);
     };
     return <Button onClick={handleClick}>Next Color</Button>;
 }
