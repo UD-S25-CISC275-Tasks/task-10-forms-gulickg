@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { QuestionType } from "../interfaces/question";
 
 export function ChangeType(): React.JSX.Element {
+<<<<<<< HEAD
     //type QuestionType = "multiple_choice_question" | "short_answer_question";
     const [question, setType] = useState<QuestionType>("short_answer_question");
     function ChangeType(): void {
@@ -32,3 +33,7 @@ When the type is multiple_choice_question, the text Multiple Choice should be vi
 When the type is short_answer_question, the text Short Answer should be visible.
 The initial type must be short_answer_question.
 */
+=======
+    return <div>Change Type</div>;
+}
+>>>>>>> origin/task-forms

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function StartAttempt(): React.JSX.Element {
+<<<<<<< HEAD
     const [attempts, setAttempts] = useState<number>(4);
     const [progress, setProgress] = useState<boolean>(false);
     //const [disabled, setDisabled] = useState<boolean>(true);
@@ -49,3 +50,7 @@ When the quiz is not in progress, the Stop Quiz button is disabled.
 When the attempts are zero, the Start Quiz button is disabled.
 The number of attempts should be visible in the interface.
 */
+=======
+    return <div>Start Attempt</div>;
+}
+>>>>>>> origin/task-forms

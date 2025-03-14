@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function RevealAnswer(): React.JSX.Element {
+<<<<<<< HEAD
     const [visible, setVisible] = useState<boolean>(false);
     function flipVisibility(): void {
         setVisible(!visible);
@@ -20,3 +21,7 @@ There is a button labelled Reveal Answer that inverts the state.
 The text 42 is not initially visible.
 When the button is clicked, the text 42 should be visible.
 */
+=======
+    return <div>Reveal Answer</div>;
+}
+>>>>>>> origin/task-forms
