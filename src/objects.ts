@@ -8,9 +8,8 @@ import { Question, QuestionType } from "./interfaces/question";
 export function makeBlankQuestion(
     id: number,
     name: string,
-    type: QuestionType
+    type: QuestionType,
 ): Question {
-<<<<<<< HEAD
     return {
         id: id,
         name: name,
@@ -19,11 +18,8 @@ export function makeBlankQuestion(
         options: [],
         expected: "",
         points: 1,
-        published: false
+        published: false,
     };
-=======
-    return {};
->>>>>>> origin/task-forms
 }
 
 /**
@@ -34,12 +30,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-<<<<<<< HEAD
     if (question.expected.trim().toLowerCase() == answer.trim().toLowerCase()) {
         return true;
     }
-=======
->>>>>>> origin/task-forms
     return false;
 }
 
@@ -50,7 +43,6 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-<<<<<<< HEAD
     if (question.type == "short_answer_question") {
         return true;
     } else {
@@ -60,11 +52,6 @@ export function isValid(question: Question, answer: string): boolean {
     }
     return false;
 }
-=======
-    return false;
-}
-
->>>>>>> origin/task-forms
 /**
  * Consumes a question and produces a string representation combining the
  * `id` and first 10 characters of the `name`. The two strings should be
@@ -72,11 +59,7 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-<<<<<<< HEAD
     return question.id + ": " + question.name.slice(0, 10);
-=======
-    return "";
->>>>>>> origin/task-forms
 }
 
 /**
@@ -97,7 +80,6 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-<<<<<<< HEAD
     let answer = "# " + question.name + "\n" + question.body;
     let combOptions = "";
     if (question.type == "multiple_choice_question") {
@@ -108,9 +90,6 @@ export function toMarkdown(question: Question): string {
         return answer + combOptions;
     }
     return answer + combOptions;
-=======
-    return "";
->>>>>>> origin/task-forms
 }
 
 /**
@@ -118,7 +97,6 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-<<<<<<< HEAD
     return {
         id: question.id,
         name: newName,
@@ -127,11 +105,8 @@ export function renameQuestion(question: Question, newName: string): Question {
         options: question.options,
         expected: question.expected,
         points: question.points,
-        published: question.published
+        published: question.published,
     };
-=======
-    return question;
->>>>>>> origin/task-forms
 }
 
 /**
@@ -140,7 +115,6 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-<<<<<<< HEAD
     return {
         id: question.id,
         name: question.name,
@@ -149,11 +123,8 @@ export function publishQuestion(question: Question): Question {
         options: question.options,
         expected: question.expected,
         points: question.points,
-        published: !question.published
+        published: !question.published,
     };
-=======
-    return question;
->>>>>>> origin/task-forms
 }
 
 /**
@@ -163,7 +134,6 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-<<<<<<< HEAD
     return {
         id: id,
         name: "Copy of " + oldQuestion.name,
@@ -172,11 +142,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
         options: oldQuestion.options,
         expected: oldQuestion.expected,
         points: oldQuestion.points,
-        published: false
+        published: false,
     };
-=======
-    return oldQuestion;
->>>>>>> origin/task-forms
 }
 
 /**
@@ -187,7 +154,6 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-<<<<<<< HEAD
     return {
         id: question.id,
         name: question.name,
@@ -196,11 +162,8 @@ export function addOption(question: Question, newOption: string): Question {
         options: [...question.options, newOption],
         expected: question.expected,
         points: question.points,
-        published: question.published
+        published: question.published,
     };
-=======
-    return question;
->>>>>>> origin/task-forms
 }
 
 /**
@@ -215,9 +178,8 @@ export function mergeQuestion(
     id: number,
     name: string,
     contentQuestion: Question,
-    { points }: { points: number }
+    { points }: { points: number },
 ): Question {
-<<<<<<< HEAD
     return {
         id: id,
         name: name,
@@ -226,9 +188,6 @@ export function mergeQuestion(
         options: [...contentQuestion.options],
         expected: contentQuestion.expected,
         points: points,
-        published: false
+        published: false,
     };
-=======
-    return contentQuestion;
->>>>>>> origin/task-forms
 }

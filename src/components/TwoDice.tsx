@@ -12,7 +12,6 @@ export function d6(): number {
 }
 
 export function TwoDice(): React.JSX.Element {
-<<<<<<< HEAD
     const [right, setRight] = useState<number>(d6());
     const [left, setLeft] = useState<number>(d6());
     //const [visible, setVisible] = useState<boolean>(false);
@@ -63,7 +62,3 @@ When the two states are equal but ARE both ones, render a message that includes 
 When the two states are equal but are NOT both ones, render a message that includes the word Win.
 If you do all these and are still not passing all tests, read the test file, it is a good practice! In much of software engineering, the tests are the product spec.
 */
-=======
-    return <div>Two Dice</div>;
-}
->>>>>>> origin/task-forms

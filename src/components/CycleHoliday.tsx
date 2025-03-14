@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-<<<<<<< HEAD
 enum Holiday {
     Halloween = "🎃",
     Christmas = "🎄",
     NewYear = "🎉",
     Easter = "🐰",
-    Thanksgiving = "🦃"
+    Thanksgiving = "🦃",
 }
 
 function nextHolidayAlph(holiday: Holiday): Holiday {
@@ -22,7 +21,7 @@ function nextHolidayYear(holiday: Holiday): Holiday {
         Holiday.Easter,
         Holiday.Halloween,
         Holiday.Thanksgiving,
-        Holiday.Christmas
+        Holiday.Christmas,
     ];
     const i = holidaysDate.indexOf(holiday);
     return holidaysDate[(i + 1) % holidaysDate.length];
@@ -54,8 +53,3 @@ The view should render the current holiday with the text Holiday: followed by th
 The first button should include the text Alphabet somewhere (e.g., Advance by Alphabet) and changes the current holiday to the next one alphabetically.
 The second button should include the text Year somewhere (e.g., Advance by Year) and changes the current holiday to the next one in the year.
 */
-=======
-export function CycleHoliday(): React.JSX.Element {
-    return <div>Cycle Holiday</div>;
-}
->>>>>>> origin/task-forms
