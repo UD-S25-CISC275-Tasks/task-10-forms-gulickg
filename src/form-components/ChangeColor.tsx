@@ -26,7 +26,9 @@ export function ChangeColor(): React.JSX.Element {
                         name="color-options"
                         value={option}
                         checked={color == option}
-                        onChange={() => setColor(option)}
+                        onChange={() => {
+                            setColor(option);
+                        }}
                         inline
                         style={{ color: color }}
                     />
