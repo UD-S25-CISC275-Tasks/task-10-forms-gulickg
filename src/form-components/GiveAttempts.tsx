@@ -14,10 +14,10 @@ export function GiveAttempts(): React.JSX.Element {
     }
     function gain() {
         const request = parseInt(attemptsRequest);
-        if (!request) {
-            setAttemptsLeft(attemptsLeft);
+        if (request && request > 0) {
+            setAttemptsLeft(attemptsLeft + request);
         }
-        setAttemptsLeft(attemptsLeft + request);
+        setAttemptsRequest("");
     }
     return (
         <div>
